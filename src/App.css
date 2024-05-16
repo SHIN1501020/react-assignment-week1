@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,45 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+.todo {
+  max-width: 1200px;
+  min-width: 800px;
+  margin: 0 auto;
+}
+
+.todo-list {
+  display: flex;
+  align-items: center;
+}
+
+.todo-item {
+  border-radius: 10px;
+  border: 4px solid green;
+  margin: auto 5px auto 5px;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+.red {
+  border: 1px solid red;
+}
+
+.green {
+  border: 1px solid green;
+}
+
+.todo-button > button {
+  border-radius: 5px;
+  background-color: transparent;
+  margin: auto 5px auto 5px;
+  padding: 5px 20px 5px 20px;
+}
+
+
+.todo-title {
+  border: solid 1px gray;
+  padding: 5px 10px 5px 10px;
 }

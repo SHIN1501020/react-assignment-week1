@@ -49,8 +49,8 @@ function App() {
 
 
   return (
-    <div>
-      <h3>My Todo List</h3>
+    <div className="todo">
+      <h3 className="todo-title">My Todo List</h3>
       <div>
         제목
         <input type="text" value={todo.title} onChange={onchangeTitleHandler} />
@@ -60,28 +60,40 @@ function App() {
       </div>
 
       <h1>Working</h1>
-      {todoList
-        .filter((todo) => todo.isDone === false)
-        .map((todo) => (
-          <div key={todo.id}>
-            <h3>{todo.title}</h3>
-            <p>{todo.body}</p>
-            <button onClick={() => onDeleteHandler(todo.id)}>삭제</button>
-            <button onClick={() => onCompleteHandler(todo.id)}>완료</button>
-          </div>
-        ))}
+      <div className="todo-list">
+        {todoList
+          .filter((todo) => todo.isDone === false)
+          .map((todo) => (
+            <div key={todo.id} className="todo-item">
+              <h3>{todo.title}</h3>
+              <p>{todo.body}</p>
+              <div className="todo-button">
+               <button className="red" onClick={() => onDeleteHandler(todo.id)}>삭제</button>
+               <button className="green" onClick={() => onCompleteHandler(todo.id)}>완료</button> 
+              </div>
+            
+            </div>
+          ))}
+      </div>
+
 
       <h1>Done!</h1>
-      {todoList
-        .filter((todo) => todo.isDone === true)
-        .map((todo) => (
-          <div key={todo.id}>
-            <h3>{todo.title}</h3>
-            <p>{todo.body}</p>
-            <button onClick={() => onDeleteHandler(todo.id)}>삭제</button>
-            <button onClick={() => onCancelHandler(todo.id)}>취소</button>
-          </div>
-        ))}
+
+      <div className="todo-list">
+        {todoList
+          .filter((todo) => todo.isDone === true)
+          .map((todo) => (
+            <div key={todo.id} className="todo-item">
+              <h3>{todo.title}</h3>
+              <p>{todo.body}</p>
+              <div className="todo-button">
+               <button className="red" onClick={() => onDeleteHandler(todo.id)}>삭제</button>
+               <button className="green" onClick={() => onCancelHandler(todo.id)}>취소</button> 
+              </div>
+              
+            </div>
+          ))}
+      </div>
     </div>
   );
 }
